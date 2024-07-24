@@ -7,7 +7,7 @@
 
   leftInput.addEventListener('input', jsonSchemaToTypescript.compile);
 
-  const localStorageKey = 'json-schema-to-typescript';
+  const localStorageKey = 'json-to-typescript';
   const content = localStorage.getItem(localStorageKey);
 
   if (content) {

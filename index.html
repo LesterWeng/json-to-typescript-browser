@@ -28,7 +28,7 @@
   <body>
     <div id="app">
       <div id="leftInput">
-        <h2>Input (JSON Schema)</h2>
+        <h2>Input (JSON)</h2>
         <div class="buttons">
           <span class="button" id="errorIcon" title="There was an error compiling your schema" style="display: none">
             <i class="fa fa-lg fa-exclamation"></i>
@@ -58,34 +58,7 @@
         </div>
         <textarea>
 {
-  "title": "Example Schema",
-  "type": "object",
-  "properties": {
-    "firstName": {
-      "type": "string"
-    },
-    "lastName": {
-      "type": "string"
-    },
-    "age": {
-      "description": "Age in years",
-      "type": "integer",
-      "minimum": 0
-    },
-    "hairColor": {
-      "enum": [
-        "black",
-        "brown",
-        "blue"
-      ],
-      "type": "string"
-    }
-  },
-  "additionalProperties": false,
-  "required": [
-    "firstName",
-    "lastName"
-  ]
+
 }</textarea
         >
       </div>

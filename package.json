@@ -1,7 +1,7 @@
 {
-  "name": "json-schema-to-typescript-browser",
+  "name": "json-to-typescript-browser",
   "version": "1.0.3",
-  "description": "Browser usage demo for json-schema-to-typescript",
+  "description": "Browser usage demo for json-to-typescript",
   "type": "module",
   "keywords": [
     "browser",
@@ -11,20 +11,20 @@
     "translate",
     "typescript"
   ],
-  "homepage": "https://github.com/bcherny/json-schema-to-typescript-browser#readme",
+  "homepage": "https://github.com/bcherny/json-to-typescript-browser#readme",
   "bugs": {
-    "url": "https://github.com/bcherny/json-schema-to-typescript-browser/issues"
+    "url": "https://github.com/bcherny/json-to-typescript-browser/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/bcherny/json-schema-to-typescript-browser.git"
+    "url": "git+ssh://git@github.com/bcherny/json-to-typescript-browser.git"
   },
   "license": "MIT",
   "author": "Boris Cherny <boris@performancejs.com> (https://performancejs.com)",
   "main": "index.js",
   "scripts": {
     "bundle": "rollup -c",
-    "start": "static",
+    "start": "static -p 8085",
     "watch": "rollup -c -w"
   },
   "dependencies": {
@@ -35,7 +35,7 @@
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@rollup/plugin-typescript": "^11.1.6",
     "eslint": "^9.2.0",
-    "json-schema-to-typescript": "*",
+    "json-to-ts": "^2.1.0",
     "prettier": "^3.2.5",
     "rollup": "^4.17.2",
     "rollup-plugin-polyfill-node": "^0.13.0",

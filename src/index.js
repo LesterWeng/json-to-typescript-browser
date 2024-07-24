@@ -1,4 +1,4 @@
-const { compile } = require('json-schema-to-typescript');
+const JsonToTS = require('json-to-ts')
 
 const options = {
   declareExternallyReferenced: true,
@@ -25,10 +25,10 @@ window.addEventListener('DOMContentLoaded', async () => {
 
 function loadFromURI() {
   const hash = window.location.hash.slice(1);
-  if (!hash.startsWith('schema=')) {
+  if (!hash.startsWith('json=')) {
     return;
   }
-  getLeftInput().value = window.decodeURI(hash.slice(7));
+  getLeftInput().value = window.decodeURI(hash.slice(5));
 }
 
 function initOptions() {
@@ -43,7 +43,7 @@ function initOptions() {
 }
 
 async function update() {
-  const input = getInput();
+  const input = getLeftInput().value
   if (input === undefined) {
     return;
   }
@@ -53,7 +53,7 @@ async function update() {
 
   // re-compile TS
   try {
-    const ts = await compile(input, 'Demo', options);
+    const ts = await JsonToTS(JSON.parse(input), 'Demo', options);
     getRightOutput().value = ts;
     clearError();
   } catch (e) {
@@ -72,7 +72,7 @@ function setError(e) {
 }
 
 function format() {
-  const input = getInput();
+  const input = getLeftInput().value
   if (input === undefined) {
     return;
   }
@@ -82,18 +82,7 @@ function format() {
 }
 
 function save() {
-  window.location.hash = 'schema=' + window.encodeURI(getLeftInput().value);
-}
-
-function getInput() {
-  try {
-    const input = JSON.parse(getLeftInput().value);
-    clearError();
-    return input;
-  } catch (e) {
-    setError(e);
-    return undefined;
-  }
+  window.location.hash = 'json=' + window.encodeURI(getLeftInput().value);
 }
 
 function getLeftInput() {

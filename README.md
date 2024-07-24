@@ -1,6 +1,6 @@
-# json-schema-to-typescript-browser
+# json-to-typescript-browser
 
-> Browser usage demo for json-schema-to-typescript
+> Browser usage demo for json-to-typescript
 
 ## Usage
 
